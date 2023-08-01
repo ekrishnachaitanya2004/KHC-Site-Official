@@ -1,0 +1,32 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+
+const meta = {
+	title: "About",
+	description: "About Krypto Hashers Community (KHC)",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1 class="title text-3xl md:text-4xl">
+			<span class="bg-gradient-to-r from-accent-two via-accent-one to-purple-500 dark:from-accent-two dark:via-accent-one dark:to-purple-400 bg-clip-text text-transparent">
+				About KHC
+			</span>
+		</h1>
+		<div class="prose prose-lg dark:prose-invert">
+			<p>
+				Welcome to Krypto Hashers Community (KHC) — a freeform collective of developers, creators, digital explorers, and late-night builders who aren't waiting for permission to make things. We're not a startup, not a bootcamp, and definitely not a LinkedIn productivity cult. We're the in-between space — where someone's building an AI tool that yells motivational quotes every time your tests fail, someone else is making an unnecessarily complex CLI for ordering pizza, and others are deep in GitHub threads fixing bugs, shipping features, and laughing through the chaos. KHC is where random ideas turn into open-source projects, abandoned repos get resurrected for fun, and every pull request is a mini celebration. Some of us are self-taught. Some are senior devs. Some are still figuring out how Git works — and all of that is perfect. This is a space where your weirdness is welcome, your questions are never "too basic," and your creativity has room to run wild.
+			</p>
+
+			<p>
+				We believe that building things shouldn't feel like a grind. It should feel like play — unpredictable, exciting, maybe a bit chaotic — but always collaborative. We host live code jams, weekend build sprints, chill seshes where we co-work, brainstorm, or just vibe with music and memes. You'll find us obsessing over clean design, smart APIs, ridiculous automation, and fixing bugs at 2AM with way too many browser tabs open. KHC isn't about chasing clout or grinding for stars — it's about building cool, useful, hilarious, or totally absurd things just because we can. Whether you're here to contribute to projects, brainstorm ideas, learn new tech, or just hang out and vibe, you'll find people who get it. People who want to help. People who will stay up late figuring something out with you because they remember what it was like being stuck and alone.
+			</p>
+
+			<p>
+				We're not here to impress anyone. We're here to make, to learn in public, to fail loudly, to help each other, and to celebrate the process as much as the product. Krypto Hashers is not just a dev community — it's a weird, wild support system for people who think in code, dream in frameworks, and believe that shipping half-broken projects with love is better than waiting for perfection. If you've ever had a half-baked idea you wanted to bring to life, or just wanted a crew that hypes you up for shipping something strange and brilliant — you're home.
+			</p>
+		</div>
+	</div>
+</PageLayout>
