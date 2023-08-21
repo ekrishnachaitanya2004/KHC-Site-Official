@@ -8,13 +8,13 @@ const currentPath = Astro.url.pathname;
 const posts = await getCollection("post");
 const series = await getCollection("series");
 
-// Находим серию по переданному `seriesId` указанному в посте
+// Find series by ID
 const postsSeries = series.find((s) => s.id === seriesId);
 if (!postsSeries) {
-  	throw new Error(`Post(s) with Series ID '${seriesId}' not found.`);
+  	throw new Error(`Series with ID '${seriesId}' not found.`);
 }
-// console.log("Post(s) Series:", postsSeries); // Debug. Логируем найденную серию
 
+// Get posts in this series
 let seriesPosts: CollectionEntry<"post">[] = [];
 if (seriesId) {
 	seriesPosts = posts
@@ -50,7 +50,7 @@ if (seriesId) {
 			{postsSeries.id ? (
 				<a 
 					href={`/series/${postsSeries.id}`} 
-					aria-label={`About ${postsSeries.data.title} series`}
+					aria-label={`Contact ${postsSeries.data.title} series`}
 					class="sticky top-4 flex h-8 w-full items-center justify-center gap-x-1 rounded-lg shadow-lg bg-accent-base font-medium text-bgColor hover:brightness-110 transition-all duration-300"
 				>
 					<Icon class="inline-block h-6 w-6 text-bgColor" name="solar:notes-bold" />

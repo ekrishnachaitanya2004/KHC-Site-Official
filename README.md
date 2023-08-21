@@ -2,7 +2,7 @@
 
 Welcome to the Krypto Hashers Community — a freeform collective of developers, creators, digital explorers, and late-night builders who aren't waiting for permission to make things.
 
-## About Us
+## Contact Us
 
 We're not a startup, not a bootcamp, and definitely not a LinkedIn productivity cult. We're the in-between space — where someone's building an AI tool that yells motivational quotes every time your tests fail, someone else is making an unnecessarily complex CLI for ordering pizza, and others are deep in GitHub threads fixing bugs, shipping features, and laughing through the chaos.
 
