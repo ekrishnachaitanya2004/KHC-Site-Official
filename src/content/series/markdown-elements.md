@@ -1,5 +1,5 @@
 ---
 id: harshi
-title: "KHC
+title: "KHC"
 description: "Love you Harshi"
 ---
