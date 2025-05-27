@@ -3,7 +3,7 @@ title: "Contact KHC"
 publishDate: "30 December 2023"
 description: "An introduction to the KHC"
 seriesId: citrus-docs
-orderInSeries: 1
+orderInSeries: 10
 featured: false
 tags: ["github", "KHC", "organization"]
 ogImage: ""
