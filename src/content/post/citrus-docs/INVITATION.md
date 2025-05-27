@@ -36,6 +36,8 @@ Whether you’re here to learn, build, teach, or just explore — your time star
 
 The real action in KHC happens in our communication spaces. Before you get your hands dirty with code, be sure to:
 
+![KHC Preview](https://github.com/Krypto-Hashers-Community/KHC-SITE-Docs/blob/main/blogpics/Screenshot%202025-05-28%20at%2012.16.37%E2%80%AFAM.png?raw=true)
+
 🔗 Follow us on [LinkedIn](https://www.linkedin.com/company/krypto-hashers-community)
 
 This is where we post updates, member highlights, and ongoing contributor positions.
