@@ -31,37 +31,84 @@ const meta = {
 			</a>
 		</div>
 
-		<form class="space-y-6 bg-accent-base/5 p-6 rounded-lg shadow-lg">
+		<div id="successMessage" class="hidden p-4 mb-4 text-green-700 bg-green-100 rounded-lg">
+			Thank you for your message! We'll review your request and get back to you soon.
+		</div>
+
+		<form id="contactForm" class="space-y-6 bg-accent-base/5 p-6 rounded-lg shadow-lg">
 			<div class="space-y-4">
 				<div>
 					<label for="name" class="block text-sm font-medium text-light mb-1">Name</label>
-					<input type="text" id="name" name="name" required
+					<input type="text" id="name" name="entry.76721693" required
 						class="w-full px-4 py-2 rounded-lg bg-bgColor border border-special-light focus:border-accent-two focus:ring-1 focus:ring-accent-two outline-none transition-colors" />
 				</div>
 
 				<div>
 					<label for="email" class="block text-sm font-medium text-light mb-1">Email</label>
-					<input type="email" id="email" name="email" required
+					<input type="email" id="email" name="entry.1103116410" required
 						class="w-full px-4 py-2 rounded-lg bg-bgColor border border-special-light focus:border-accent-two focus:ring-1 focus:ring-accent-two outline-none transition-colors" />
 				</div>
 
 				<div>
 					<label for="github" class="block text-sm font-medium text-light mb-1">GitHub Username</label>
-					<input type="text" id="github" name="github" required
+					<input type="text" id="github" name="entry.467853068" required
 						class="w-full px-4 py-2 rounded-lg bg-bgColor border border-special-light focus:border-accent-two focus:ring-1 focus:ring-accent-two outline-none transition-colors" />
 				</div>
 
 				<div>
 					<label for="message" class="block text-sm font-medium text-light mb-1">Message</label>
-					<textarea id="message" name="message" rows="4" required
+					<textarea id="message" name="entry.481796966" rows="4" required
 						class="w-full px-4 py-2 rounded-lg bg-bgColor border border-special-light focus:border-accent-two focus:ring-1 focus:ring-accent-two outline-none transition-colors"></textarea>
 				</div>
 			</div>
 
-			<button type="submit"
+			<button type="submit" id="submitButton"
 				class="w-full py-2 px-4 bg-accent-base text-bgColor font-medium rounded-lg hover:bg-accent-two transition-colors">
 				Send Message
 			</button>
 		</form>
 	</div>
+
+	<script>
+		const form = document.getElementById('contactForm') as HTMLFormElement;
+		const successMessage = document.getElementById('successMessage');
+		const submitButton = document.getElementById('submitButton') as HTMLButtonElement;
+		let isSubmitting = false;
+
+		if (form && successMessage && submitButton) {
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				
+				if (isSubmitting) return;
+				isSubmitting = true;
+				submitButton.disabled = true;
+				submitButton.textContent = 'Sending...';
+
+				const formData = new FormData(form);
+				
+				try {
+					await fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSfPvM-69H3uyn8WUyAAZQHbN059J_QXFEjLEWmWYFkK4meMXg/formResponse', {
+						method: 'POST',
+						mode: 'no-cors',
+						body: formData
+					});
+					
+					successMessage.classList.remove('hidden');
+					form.reset();
+					
+					setTimeout(() => {
+						successMessage.classList.add('hidden');
+						isSubmitting = false;
+						submitButton.disabled = false;
+						submitButton.textContent = 'Send Message';
+					}, 5000);
+				} catch (error) {
+					console.error('Error:', error);
+					isSubmitting = false;
+					submitButton.disabled = false;
+					submitButton.textContent = 'Send Message';
+				}
+			});
+		}
+	</script>
 </PageLayout>
